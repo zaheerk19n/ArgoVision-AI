@@ -1,0 +1,50 @@
+/* Import Google Fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+:root {
+  --bg: #ffffff;
+  --text: rgb(50, 49, 49);
+  --primary-color: #065f46;     /* emerald-800 main headings*/
+  --secondary-color: #22c55e;   /* green-500 links and sub headings*/
+  --shadowing: drop-shadow(0 0 6px rgba(0, 255, 0, 0.6));
+  --hovering: #dcfce7;          /* green-100 */
+  --firstgradient:#61f095;
+  --secondgradient:#ffedd5;
+  --thirdgradient:#2ce06e;
+  --dash:#e0ebeb;
+  --temp:white;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #ffffff;
+  --primary-color: #0c9770;     /* emerald-800 main headings */
+  --secondary-color: #22c55e;   /* green-500 links and sub headings*/
+  --shadowing: drop-shadow(0 0 6px rgba(0, 255, 0, 0.6));
+  --hovering: #dcfce7;          /* green-100 */
+  --secondgradient: #00000065;
+  --firstgradient:#0c9770; 
+  --thirdgradient:#0c9770;
+  --dash:#121212;
+  --temp:#121212;
+}
+
+
+.chat-scroll::-webkit-scrollbar {
+  width: 8px; /* stable value */
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(#064e3b, #22c55e, #86efac);
+  border-radius: 999px;
+  border: 2px solid transparent; /* 👈 makes it look thinner */
+  background-clip: padding-box;
+}
