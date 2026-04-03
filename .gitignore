@@ -25,3 +25,15 @@ build/
 # Frontend specific
 crop-frontend/node_modules/
 crop-frontend/dist/
+
+node_modules/
+dist/
+*.log
+.env
+venv/
+__pycache__/
+models/
+datasets/
+*.h5
+*.pkl
+*.pt
