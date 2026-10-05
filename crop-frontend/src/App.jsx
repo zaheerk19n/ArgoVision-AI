@@ -10,27 +10,98 @@ import Notification from "./pages/Notification";
 import Details from "./pages/Details";
 import History from "./pages/History";
 import UserCrop from "./pages/UserCrop";
-import ProtectedRoute from "./components/ProtectedRoute"; 
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
+
   const location = useLocation();
+
+  const hideNavbar =
+    location.pathname === "/signup";
 
   return (
     <>
-      {/* Hide Navbar on Signup page */}
-      {location.pathname !== "/signup" && <Navbar />}
+      {!hideNavbar && <Navbar />}
 
       <Routes>
-        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>}/>
+
+        {/* Public Route */}
         <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Home text/>} />
-        <Route path="/predict" element={<Predict />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/diseases" element={<Diseases />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/usercrops" element={<UserCrop />} />
-        <Route path="/details" element={<Details />} />
-        <Route path="/notify" element={<Notification />} />
+
+        {/* Protected Routes */}
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/predict"
+          element={
+            <ProtectedRoute>
+              <Predict />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/diseases"
+          element={
+            <ProtectedRoute>
+              <Diseases />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/history"
+          element={
+            <ProtectedRoute>
+              <History />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/usercrops"
+          element={
+            <ProtectedRoute>
+              <UserCrop />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/details"
+          element={
+            <ProtectedRoute>
+              <Details />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/notify"
+          element={
+            <ProtectedRoute>
+              <Notification />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </>
   );
